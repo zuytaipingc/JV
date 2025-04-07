@@ -1,0 +1,50 @@
+<!-- 顶部区域 -->
+<!-- <view class="top-section">
+  <image src="/images/home_top.jpg" mode="widthFix"></image>
+</view> -->
+
+<!-- 设备借用和归还选项区域 -->
+<!-- <view class="options-section">
+  <button bindtap="goToBorrowPage">
+    <view class="options-wen">
+    <icon type="success_no_circle" size="20"></icon>
+    <text>设备借用</text>
+  </view>
+  </button>
+  <button bindtap="goToReturnPage">
+    <view class="options-wen">
+    <icon type="warn" size="20"></icon>
+    <text>设备归还</text>  
+</view>
+</button>
+</view> -->
+
+<!-- 底部区域 -->
+<!-- <view class="footer"> -->
+
+<!-- </view>     -->
+
+
+<view class="main">
+  <!-- 顶部图片 -->
+  <view class="top_img">
+    <image src="/images/home_top.jpg" mode="widthFix" />
+  </view>
+</view>
+
+  <!-- 卡片 -->
+   <view class="card">
+    <view class="info">
+      <!-- 预留navigator -->
+
+      <view bind:tap="equipBorrowingTap">
+        <text class="iconfont icon-wl"></text>
+        <text>设备借用</text>
+      </view>
+      <view bindtap="equipReturnTap">
+        <text class="iconfont icon-jy"></text>
+        <text>设备归还</text>
+      </view>
+    </view>
+
+   </view>

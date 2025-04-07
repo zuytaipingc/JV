@@ -1,0 +1,102 @@
+<!-- 搜索框 -->
+<van-search
+  model:value="{{ value }}"
+  input-align="center"
+  placeholder="请输入搜索关键词"
+/>
+<!-- tab栏 -->
+<van-tabs active="{{ active }}">
+    <van-tab title="全部">
+        <view class="order-list-box">
+            <view class="order-item-box" wx:for="{{equipList}}" wx:key="deviceId" bindtap="equipDetail">
+                <!-- 设备信息左侧 -->
+                 <!-- 设备图片 -->
+                  <image src="{{item.deviceImg}}" mode="" />
+                  <!-- 设备信息右侧 -->
+                   <view class="equip-info-right">
+                    <!-- 设备名称 -->
+                     <view class="equip-name">
+                        <text>{{item.deviceName}}</text>
+                     </view>
+                     <!-- 设备状态 -->
+                      <view class="equip-status">
+                        <!-- 图标 -->
+                        <van-icon name="passed" wx:if="{{item.deviceStatus == 0}}" />
+                        <van-icon name="clock-o" wx:if="{{item.deviceStatus == 1}}" color="red" />
+                        <text wx:if="{{item.deviceStatus == 0}}">未借用</text>
+                        <text wx:if="{{item.deviceStatus == 1}}" class="red">已借用</text>
+                      </view>
+                      <!-- 更新时间 -->
+                       <view class="borrowing-time">
+                        <text>{{item.updateTime}}</text>
+                       </view>
+                   </view>
+            </view>
+        </view>
+
+    </van-tab>
+    <van-tab title="可借用">
+        <view class="order-list-box">
+            <view class="order-item-box" wx:for="{{equipList}}" wx:key="deviceId">
+                <!-- 设备信息左侧 -->
+                 <!-- 设备图片 -->
+                  <image src="{{item.deviceImg}}" mode="" />
+                  <!-- 设备信息右侧 -->
+                   <view class="equip-info-right">
+                    <!-- 设备名称 -->
+                     <view class="equip-name">
+                        <text>{{item.deviceName}}</text>
+                     </view>
+                     <!-- 设备状态 -->
+                      <view class="equip-status">
+                        <!-- 图标 -->
+                        <van-icon name="passed" wx:if="{{item.deviceStatus == 0}}" />
+                        <van-icon name="clock-o" wx:if="{{item.deviceStatus == 1}}" color="red" />
+                        <text wx:if="{{item.deviceStatus == 0}}">未借用</text>
+                        <text wx:if="{{item.deviceStatus == 1}}">已借用</text>
+                        <text wx:if="{{item.deviceStatus == 0}}">未借用</text>
+
+                      </view>
+                      <!-- 更新时间 -->
+                       <view class="borrowing-time">
+                        <text>{{item.updateTime}}</text>
+                       </view>
+                   </view>
+            </view>
+        </view>     
+        </van-tab>
+    <van-tab title="借用中">
+        <view class="order-list-box">
+            <view class="order-item-box" wx:for="{{equipList}}" wx:key="deviceId">
+                <!-- 设备信息左侧 -->
+                 <!-- 设备图片 -->
+                  <image src="{{item.deviceImg}}" mode="" />
+                  <!-- 设备信息右侧 -->
+                   <view class="equip-info-right">
+                    <!-- 设备名称 -->
+                     <view class="equip-name">
+                        <text>{{item.deviceName}}</text>
+                     </view>
+                     <!-- 设备状态 -->
+                      <view class="equip-status">
+                        <!-- 图标 -->
+                        <van-icon name="passed" wx:if="{{item.deviceStatus == 0}}" />
+                        <van-icon name="clock-o" wx:if="{{item.deviceStatus == 1}}" color="red" />
+                        <text wx:if="{{item.deviceStatus == 0}}">未借用</text>
+                        <text wx:if="{{item.deviceStatus == 1}}">已借用</text>
+                        <text wx:if="{{item.deviceStatus == 0}}">未借用</text>
+
+                      </view>
+                      <!-- 更新时间 -->
+                       <view class="borrowing-time">
+                        <text>{{item.updateTime}}</text>
+                       </view>
+                   </view>
+            </view>
+        </view>
+    </van-tab>
+  </van-tabs>
+
+
+
+  

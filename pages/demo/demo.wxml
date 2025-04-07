@@ -1,0 +1,3 @@
+<van-button type="primary" round bindtap="getData">获取数据</van-button>
+<van-button type="warning" block bindtap="delHandle">删除数据</van-button>
+

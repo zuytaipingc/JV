@@ -1,0 +1,24 @@
+<!-- 设备详情 -->
+<view class="equipDetail-box">
+<!-- 设备列表 -->
+  <view class="equip-item" wx:for="{{equipList}}" wx:key="deviceId">
+    <!-- 设备标题 -->
+    <view class="equip-detail-title">
+      <text>{{item.deviceName}}</text>
+    </view>
+    <!-- 设备类型 -->
+    <view class="equip-detail-type">
+      <text>{{item.typeName}}</text>
+    </view>
+    <!-- 设备图片 -->
+    <view class="equip-detail-img">
+      <image src="{{item.deviceImg}}" mode="" />
+    </view>
+    <!-- 设备介绍 -->
+    <view class="equip-detail-content">
+      <text>{{item.deviceContent}}</text>
+    </view>
+  </view>
+</view>
+<!-- 借用按钮 -->
+<van-button type="default" block>可借用</van-button>

@@ -1,0 +1,64 @@
+<!-- <view class="container"> -->
+<!-- top -->
+<!-- <view class="top">
+        <image src="/images/xr.png" mode="widthFix" />
+        <text class="title1">
+            注册 / 登录
+        </text>
+        <text class="title2">
+            注册成功后，使用更多功能
+        </text>
+    </view>
+</navigator>
+</view>
+<view class="gongnneg">
+        <view class="optins">
+            <navigator url="/pages/borrow-record/borrow-record">
+            <text class="title1">我的借用记录</text>
+    </navigator>
+
+    <navigator url="/pages/borrow-record/borrow-record">
+            <text class="title2">关于</text>
+        </navigator>
+        </view>
+   
+</view> -->
+
+<!-- user -->
+
+<view class="container">
+  <view class="top">
+    <view class="inner">
+      <!-- 头像 -->
+      <image src="/images/xr.png" mode="" />
+      <!-- 登录注册 -->
+      <view class="right">
+        <text>注册/登录</text>
+        <text>注册成功后，使用更多功能</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 列表 -->
+ <view class="list">
+    <view>
+        <view class="list_left">
+            <text class="iconfont icon-gwb"></text>
+            <text>我的借用记录</text>
+        </view>
+        <view class="list_right">
+            <text class="iconfont icon-yjt"></text>
+        </view>
+    </view>
+
+    <view>
+        <view class="list_left">
+            <text class="iconfont icon-kefu"></text>
+            <text>关于</text>
+        </view>
+        <view class="list_right">
+            <text class="iconfont icon-yjt"></text>
+        </view>
+    </view>
+ </view>

@@ -1,0 +1,33 @@
+.main .top_img image {
+  width: 100%;
+}
+.card {
+  background-color: #fff;
+  height: 100vh;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  position: relative;
+  top: -60rpx;
+}
+.card .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 100rpx 50rpx;
+}
+.card .info view {
+  background-color: #1B81FE;
+  padding: 50rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.card .info view text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.card .info view text:nth-of-type(1) {
+  font-size: 70rpx;
+  margin-right: 10rpx;
+  font-weight: normal;
+}

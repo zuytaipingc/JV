@@ -1,0 +1,67 @@
+.order-list-box {
+  padding: 20rpx;
+
+  .order-item-box {
+    background-color: #fff;
+    padding: 30rpx;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+
+    >image {
+      //scss语法
+      width: 160rpx;
+      height: 160rpx;
+      border: 1 solid #eee;
+      padding: 10rpx;
+      margin-right: 30rpx;
+
+    }
+
+    .equip-info-right {
+      display: flex;
+      flex-direction: column;
+
+      //设备名称
+      .equip-name {
+        color: #333;
+        font-weight: bold;
+        font-size: 30rpx;
+        // 防止文本换行
+        overflow: hidden;
+        // 隐藏溢出的文本
+        text-overflow: ellipsis;
+        // 显示省略号
+
+        text {}
+
+      }
+
+      //借用状态
+      .equip-status {
+        font-size: 24rpx;
+        font-weight: bold;
+        color: #00b26a;
+        //间距
+        margin: 30rpx 0;
+
+        >text {
+          margin-left: 10rpx;
+        }
+
+        .red {
+          color: red;
+        }
+      }
+
+
+
+      //更新时间
+      .borrowing-time {
+        color: #999;
+        font-size: 22rpx;
+      }
+
+    }
+  }
+}

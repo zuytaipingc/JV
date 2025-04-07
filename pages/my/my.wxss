@@ -1,0 +1,61 @@
+page {
+  background-color: #f2f2f2;
+}
+.container .top {
+  height: 360rpx;
+  background-color: #0156c0;
+  border-bottom-left-radius: 40rpx;
+  padding: 100rpx 30rpx 30rpx 30rpx;
+  box-sizing: border-box;
+}
+.container .top .inner {
+  display: flex;
+  align-items: center;
+}
+.container .top .inner image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.container .top .inner .right {
+  display: flex;
+  flex-direction: column;
+}
+.container .top .inner .right text {
+  color: #fff;
+  font-size: 30rpx;
+}
+.container .top .inner .right text:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+.list {
+  background-color: #fff;
+  margin: 20rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.list view {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.list view:last-child {
+  border-bottom: none;
+}
+.list view .list_left {
+  color: #333;
+  font-size: 34rpx;
+}
+.list view .list_left text {
+  margin-right: 16rpx;
+}
+.list view .list_right text {
+  font-size: 50rpx;
+  color: #999;
+}

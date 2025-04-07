@@ -1,0 +1,57 @@
+.equipDetail-box{
+  //背景白色
+  background-color: #fff;
+  //
+  height: 80vh;
+  margin: 20rpx;
+  .equip-item{
+    padding: 20rpx;
+    //从第二个盒子开始 上边距20rpx
+        >view{
+      &:nth-child(n+2){
+        margin-top: 20rpx;
+      }
+    }
+    .equip-detail-title{
+      font-size: 40rpx;
+      font-weight: bold;
+      color: #02408d;
+      white-space: nowrap;
+      // 防止文本换行
+      overflow: hidden;
+      // 隐藏溢出的文本
+      text-overflow: ellipsis;
+      // 显示省略号
+    }
+    .equip-detail-type{
+      font-size: 28rpx;
+      color: #999;
+      text{
+
+      }
+    }
+    .equip-detail-img{
+      width: 600rpx;
+      border: 1rpx solid #eee;
+      padding: 20rpx;
+      margin: 0 auto;
+      >image{
+        width: 100%;
+   }
+ }
+    .equip-detail-content{
+      color: #666;
+      font-size: 30rpx;
+      //首行缩进
+      text-indent: 2rem;
+      font-weight: lighter;
+      // 行间距
+      line-height: 50rpx;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      // 限制显示的行数为5
+      overflow: hidden;
+    }
+  }
+}
