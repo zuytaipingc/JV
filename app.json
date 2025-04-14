@@ -5,7 +5,9 @@
     "pages/equipList/equipList",
     "pages/myOrderList/myOrderList",
     "pages/demo/demo",
-    "pages/equipDetail/equipDetail"
+    "pages/equipDetail/equipDetail",
+    "pages/login/login",
+    "pages/register/register"
 
 
 
@@ -37,7 +39,8 @@
   "van-tab": "@vant/weapp/tab/index",
   "van-tabs": "@vant/weapp/tabs/index",
   "van-icon": "@vant/weapp/icon/index",
-  "van-button": "@vant/weapp/button/index"
+  "van-button": "@vant/weapp/button/index",
+  "van-field": "@vant/weapp/field/index"
 },
 
   "sitemapLocation": "sitemap.json",

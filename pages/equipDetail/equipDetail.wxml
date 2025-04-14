@@ -1,6 +1,6 @@
 <!-- 设备详情 -->
 <view class="equipDetail-box">
-<!-- 设备列表 -->
+  <!-- 设备列表 -->
   <view class="equip-item" wx:for="{{equipList}}" wx:key="deviceId">
     <!-- 设备标题 -->
     <view class="equip-detail-title">
@@ -21,4 +21,8 @@
   </view>
 </view>
 <!-- 借用按钮 -->
-<van-button type="default" block>可借用</van-button>
+<view class="borrow-btn-box">
+  <view class="borrow-btn-item">
+    <text>可借用</text>
+  </view>
+</view>

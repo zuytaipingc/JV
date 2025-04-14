@@ -1,2 +1,34 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<!-- 登录logo -->
+<view class="login-top">
+  <!-- logo -->
+  <image src="/images/logo.png" mode="" />
+  <!-- 欢迎登录 -->
+  <text>
+    欢迎登录便易借平台
+  </text>
+</view>
+<!-- 表单部分 -->
+<view class="login-form">
+  <van-cell-group>
+    <!-- 学号 -->
+    <view>
+      学号
+    </view>
+    <van-field model:value="{{ userName }}" placeholder="请输入学号" border="{{ true }}" required maxlength="13" show-word-limit custom-class="custom-field" />
+    <!-- 密码 -->
+    <view>
+      密码
+    </view>
+    <van-field model:value="{{ password }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" passWord />
+  </van-cell-group>
+  <!-- 去注册 -->
+  <view class="register-box">
+      <view class="register-title">没有账号？</view>
+        <view class="register-content" bind:tap="register">去注册</view>
+      
+  </view>
+  <!-- 登录按钮 -->
+  <view class="login-btn">
+    <van-button block color="#0156c0" round bind:tap="login">登录</van-button>
+  </view>
+</view>
