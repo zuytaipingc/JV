@@ -14,18 +14,17 @@
     <view>
       学号
     </view>
-    <van-field model:value="{{ userName }}" placeholder="请输入学号" border="{{ true }}" required maxlength="13" show-word-limit custom-class="custom-field" />
+    <van-field model:value="{{ userName }}" placeholder="请输入学号" border="{{ true }}" required maxlength="13" show-word-limit custom-class="custom-field" clearable focus="{{focusOnUserName}}"/>
     <!-- 密码 -->
     <view>
       密码
     </view>
-    <van-field model:value="{{ password }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" passWord />
+    <van-field model:value="{{ password }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" passWord clearable focus="{{focusOnUserPassword}}"/>
   </van-cell-group>
   <!-- 去注册 -->
   <view class="register-box">
       <view class="register-title">没有账号？</view>
         <view class="register-content" bind:tap="register">去注册</view>
-      
   </view>
   <!-- 登录按钮 -->
   <view class="login-btn">

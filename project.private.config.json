@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "设备归还",
+          "pathName": "pages/myOrderList/myOrderList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "注册",
           "pathName": "pages/register/register",
           "query": "",

@@ -8,9 +8,7 @@
     "pages/equipDetail/equipDetail",
     "pages/login/login",
     "pages/register/register"
-
-
-
+   
   ],
   "window": {
     "navigationBarBackgroundColor": "#0156c0"

@@ -1,1 +1,62 @@
-/* pages/myOrderList/myOrderList.wxss */
+page{
+  background-color: #fff;
+}
+.login-top {
+  background-color: #0156c0;
+  height: 300rpx;
+  display: flex;
+  //排列方向
+  flex-direction: column; //垂直排列
+  justify-content: center; //垂直居中
+  align-items: center;
+
+  >image {
+    width: 100rpx;
+    height: 100rpx;
+
+  }
+  >text {
+    color: #fff;
+    font-size: 30rpx;
+  }
+}
+//表单部分
+.login-form {
+  background-color: #fff;
+  margin-top: -40rpx;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  padding: 30rpx;
+
+  //表单组件
+  van-cell-group {
+
+
+    //输入框内容垂直居中
+    .custom-field {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40rpx;
+      .van-cell__value {
+        display: flex;
+        align-items: center;
+      }
+      .van-field__word-limit {
+        position: absolute;
+        right: 20rpx;
+      }
+    }
+  }
+
+  //去注册
+  .register-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 80rpx;
+  }
+
+  //注册按钮
+  .login-btn {
+    margin-top: 50rpx;
+  }
+}

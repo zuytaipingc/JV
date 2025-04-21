@@ -4,10 +4,14 @@ Page({
     //用户名
     userName: '',
     //密码
-    password: ''
+    password: '',
+    //用户名焦点
+    focusOnUserName: false,
+    //密码焦点
+    focusOnUserPassword: false
   },
   // 跳转到注册页面
-  register(){
+  register() {
     wx.navigateTo({
       url: '/pages/register/register',
     })
@@ -25,7 +29,11 @@ Page({
     if (!data.userName) {
       wx.showToast({
         title: '请输入学号',
-        icon:'none'
+        icon: 'none'
+      })
+      //获取焦点
+      this.setData({
+        focusOnUserName: true
       })
       return
     }
@@ -33,7 +41,11 @@ Page({
     if (!data.password) {
       wx.showToast({
         title: '请输入密码',
-        icon:'none'
+        icon: 'none'
+      })
+      //获取焦点
+      this.setData({
+        focusOnUserPassword: true
       })
       return
     }
@@ -41,7 +53,11 @@ Page({
     if (data.password.length < 6) {
       wx.showToast({
         title: '密码不得少于6位',
-        icon:'none'
+        icon: 'none'
+      })
+      //获取焦点
+      this.setData({
+        focusOnUserPassword: true
       })
       return
     }

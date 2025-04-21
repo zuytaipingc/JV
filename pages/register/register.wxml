@@ -11,12 +11,12 @@
 <view class="login-form">
   <van-cell-group>
     <!-- 学号 -->
-    <van-field model:value="{{ regDept }}" placeholder="请输入部门" border="{{ true }}" required maxlength="13" show-word-limit custom-class="custom-field" label="部门" />
-    <van-field model:value="{{ regCode }}" placeholder="请输入学号" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" label="学号" />
-    <van-field model:value="{{ regName }}" placeholder="请输入姓名" border="{{ true }}" required maxlength="11" show-word-limit custom-class="custom-field" label="姓名" />
-    <van-field model:value="{{ regMobile }}" placeholder="请输入手机号" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" label="手机号" />
+    <van-field model:value="{{ regDept }}" placeholder="请输入部门" border="{{ true }}" required maxlength="13" show-word-limit custom-class="custom-field" label="部门" clearable focus="{{focusedField==='regDept'}}" />
+    <van-field model:value="{{ regCode }}" placeholder="请输入学号" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" label="学号" clearable focus="{{focusedField==='regCode'}}" />
+    <van-field model:value="{{ regName }}" placeholder="请输入姓名" border="{{ true }}" required maxlength="11" show-word-limit custom-class="custom-field" label="姓名" clearable focus="{{focusedField==='regName'}}" />
+    <van-field model:value="{{ regMobile }}" placeholder="请输入手机号" border="{{ true }}" required maxlength="11" show-word-limit custom-class="custom-field" label="手机号" clearable focus="{{focusedField==='regMobile'}}" />
     <!-- 密码 -->
-    <van-field model:value="{{ regPassword }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" passWord label="密码" />
+    <van-field model:value="{{ regPassword }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" passWord label="密码" clearable focus="{{focusedField==='regPassword'}}" />
   </van-cell-group>
 </view>
 <!-- 注册按钮 -->

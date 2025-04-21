@@ -34,15 +34,15 @@ page{
 
     //输入框内容垂直居中
     .custom-field {
-      display: flex;
-      justify-content: space-between;
+      //解决字数统计错位
       .van-cell__value {
         display: flex;
         align-items: center;
+        justify-content: space-between;
       }
-      .van-field__word-limit {
-        position: absolute;
-        right: 20rpx;
+      //解决清除控件位置
+      .van-field__body{
+        width: 100%;
       }
     }
     >view {
@@ -64,15 +64,12 @@ page{
       color: #999;
       font-size: 26rpx;
     }
-
     // 去注册
     .register-content {
       color: red;
       font-size: 26rpx;
-
     }
   }
-
   //登录按钮
   .login-btn {
     margin-top: 50rpx;

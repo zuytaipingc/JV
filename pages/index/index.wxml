@@ -31,7 +31,6 @@
     <image src="/images/home_top.jpg" mode="widthFix" />
   </view>
 </view>
-
   <!-- 卡片 -->
    <view class="card">
     <view class="info">
