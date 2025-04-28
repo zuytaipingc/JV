@@ -1,66 +1,32 @@
-// pages/myOrderList/myOrderList.js
 Page({
+  // 初始化数据
+  data:{
+    // 列表
+    myOrderList: [
+      {
+        deviceId:0,
+        deviceImg:'https://picb7.photophoto.cn/11/537/11537487_1.jpg',
+        deviceName: '联想扬天台式机',
+        deviceStatus: 1,
+        updateTime: '2025-03-31',
+        returnTime:'2025-05-31',
+        regName:'吴彦祖',
+        regMobile:'13082057079'
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+      },
+      {
+        deviceId:1,
+        deviceImg: 'https://picb7.photophoto.cn/11/537/11537487_1.jpg',
+        deviceName: '神舟优雅X5笔记本电脑',
+        deviceStatus: 0,
+        updateTime: '2025-04-01',
+        returnTime:'2025-05-31',
+        regName:'吴彦祖的替身',
+        regMobile:'13082057079'
+      },
+      
+    ],
   }
+  
+  
 })

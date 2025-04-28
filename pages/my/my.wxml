@@ -42,7 +42,7 @@
 
 <!-- 列表 -->
  <view class="list">
-    <view>
+    <view bind:tap="myOrderList">
         <view class="list_left">
             <text class="iconfont icon-gwb"></text>
             <text>我的借用记录</text>
@@ -52,7 +52,7 @@
         </view>
     </view>
 
-    <view>
+    <view bind:tap="about">
         <view class="list_left">
             <text class="iconfont icon-kefu"></text>
             <text>关于</text>

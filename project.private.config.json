@@ -10,6 +10,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "设备借用2",
+          "pathName": "pages/borrowForm/borrowForm",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "关于",
+          "pathName": "pages/about/about",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "设备归还",
           "pathName": "pages/myOrderList/myOrderList",
           "query": "",

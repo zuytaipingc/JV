@@ -1,0 +1,14 @@
+<view class="borrowFrom-box">
+  <van-cell-group>
+    <van-field value="{{ value }}" placeholder="请输入借用说明" border="{{ true }}" required label="借用说明" maxlength="20"
+    show-word-limit custom-class="custom-field"
+    />
+    <van-field value="{{ value }}" border="{{ true }}" label="归还时间"
+    />
+  
+  </van-cell-group>
+    <!-- 按钮 -->
+    <view class="btn">
+    <van-button block color="#0156c0" round bind:tap="login">提交</van-button>
+  </view>
+</view>

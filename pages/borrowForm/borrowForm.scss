@@ -1,0 +1,21 @@
+.borrowFrom-box{
+  background-color: #fff;
+  height: 100vh;
+  margin: 20rpx;
+  padding: 20rpx;
+  van-cell-group{
+    .custom-field {
+      margin: 30rpx 0;
+      //解决字数统计错位
+      .van-cell__value {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      //解决清除控件位置
+      .van-field__body{
+        width: 100%;
+      }
+    }
+  }
+}

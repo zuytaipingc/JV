@@ -1,2 +1,156 @@
-<!--pages/myOrderList/myOrderList.wxml-->
-<text>pages/myOrderList/myOrderList.wxml</text>
+<van-tabs>
+  <van-tab title="全部">
+    <!-- 全部  -->
+    <view class="order-list-box" wx:for="{{myOrderList}}" wx:key="deviceId">
+      <!-- 列表项 -->
+      <view class="order-item-box">
+        <!-- 列表上 -->
+        <view class="equip-top">
+          <!-- 设备标题 -->
+          <view class="equip-title">
+            {{item.deviceName}}
+          </view>
+          <!-- 设备状态 -->
+          <view class="equip-status">
+            <text class="equip-g" wx:if="{{item.deviceStatus == 0}}">已归还</text>
+            <text class="equip-o" wx:if="{{item.deviceStatus == 1}}">未归还</text>
+
+          </view>
+        </view>
+        <!-- 列表下 -->
+        <view class="equip-bottom">
+          <!-- 设备图片 -->
+          <image src="{{item.deviceImg}}" mode="" />
+          <!-- 设备右侧 -->
+          <view class="equip-bottom-right">
+            <!-- 借用时间 -->
+            <view class="borrowing-time">
+              <text>借用时间：</text>
+              <text>{{item.updateTime}}</text>
+            </view>
+            <!-- 归还时间 -->
+            <view class="return-time">
+              <text>归还时间：</text>
+              <text>{{item.returnTime}}</text>
+            </view>
+            <!-- 用户姓名 -->
+            <view class="person">
+              <text>用户姓名：</text>
+              <text>{{item.regName}}</text>
+            </view>
+            <!-- 手机号码 -->
+            <view class="phone">
+              <text>手机号码：</text>
+              <text>{{item.regMobile}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+
+  </van-tab>
+  <van-tab title="借用中">
+    <!-- 全部  -->
+    <view class="order-list-box" wx:for="{{myOrderList}}" wx:key="deviceId">
+      <!-- 列表项 -->
+      <view class="order-item-box">
+        <!-- 列表上 -->
+        <view class="equip-top">
+          <!-- 设备标题 -->
+          <view class="equip-title">
+            {{item.deviceName}}
+          </view>
+          <!-- 设备状态 -->
+          <view class="equip-status">
+            <text class="equip-g" wx:if="{{item.deviceStatus == 0}}">已归还</text>
+            <text class="equip-o" wx:if="{{item.deviceStatus == 1}}">未归还</text>
+
+          </view>
+        </view>
+        <!-- 列表下 -->
+        <view class="equip-bottom">
+          <!-- 设备图片 -->
+          <image src="{{item.deviceImg}}" mode="" />
+          <!-- 设备右侧 -->
+          <view class="equip-bottom-right">
+            <!-- 借用时间 -->
+            <view class="borrowing-time">
+              <text>借用时间：</text>
+              <text>{{item.updateTime}}</text>
+            </view>
+            <!-- 归还时间 -->
+            <view class="return-time">
+              <text>归还时间：</text>
+              <text>{{item.returnTime}}</text>
+            </view>
+            <!-- 用户姓名 -->
+            <view class="person">
+              <text>用户姓名：</text>
+              <text>{{item.regName}}</text>
+            </view>
+            <!-- 手机号码 -->
+            <view class="phone">
+              <text>手机号码：</text>
+              <text>{{item.regMobile}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+  </van-tab>
+  <van-tab title="已归还">
+    <!-- 全部  -->
+    <view class="order-list-box" wx:for="{{myOrderList}}" wx:key="deviceId">
+      <!-- 列表项 -->
+      <view class="order-item-box">
+        <!-- 列表上 -->
+        <view class="equip-top">
+          <!-- 设备标题 -->
+          <view class="equip-title">
+            {{item.deviceName}}
+          </view>
+          <!-- 设备状态 -->
+          <view class="equip-status">
+            <text class="equip-g" wx:if="{{item.deviceStatus == 0}}">已归还</text>
+            <text class="equip-o" wx:if="{{item.deviceStatus == 1}}">未归还</text>
+
+          </view>
+        </view>
+        <!-- 列表下 -->
+        <view class="equip-bottom">
+          <!-- 设备图片 -->
+          <image src="{{item.deviceImg}}" mode="" />
+          <!-- 设备右侧 -->
+          <view class="equip-bottom-right">
+            <!-- 借用时间 -->
+            <view class="borrowing-time">
+              <text>借用时间：</text>
+              <text>{{item.updateTime}}</text>
+            </view>
+            <!-- 归还时间 -->
+            <view class="return-time">
+              <text>归还时间：</text>
+              <text>{{item.returnTime}}</text>
+            </view>
+            <!-- 用户姓名 -->
+            <view class="person">
+              <text>用户姓名：</text>
+              <text>{{item.regName}}</text>
+            </view>
+            <!-- 手机号码 -->
+            <view class="phone">
+              <text>手机号码：</text>
+              <text>{{item.regMobile}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>

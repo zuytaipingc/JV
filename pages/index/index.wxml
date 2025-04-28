@@ -25,7 +25,7 @@
 <!-- </view>     -->
 
 
-<view class="main">
+<view class="main"> 
   <!-- 顶部图片 -->
   <view class="top_img">
     <image src="/images/home_top.jpg" mode="widthFix" />
