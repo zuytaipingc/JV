@@ -9,7 +9,9 @@
     "pages/login/login",
     "pages/register/register",
     "pages/about/about",
-    "pages/borrowForm/borrowForm"
+    "pages/borrowForm/borrowForm",
+    "pages/weather/weather",
+    "pages/books/books"
    
   ],
   "window": {

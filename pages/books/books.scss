@@ -1,0 +1,230 @@
+/* 微信顶部状态栏样式 - 蓝粉白渐变轮换 */
+.navigation-bar {
+  background: linear-gradient(90deg, #e6f7ff, #ffebf3, #ffffff);
+  animation: statusBarShift 8s ease infinite;
+  color: #ff85a2;
+  height: 80rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  .time {
+    font-size: 30rpx;
+    font-weight: 500;
+  }
+  
+  .status-icons {
+    display: flex;
+    align-items: center;
+    gap: 15rpx;
+    
+    .signal, .battery {
+      font-size: 28rpx;
+    }
+  }
+}
+
+/* 主容器样式 */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6f7ff 0%, #fff0f5 50%, #ffffff 100%);
+  padding: 20rpx;
+  padding-top: 100rpx; /* 为状态栏留出空间 */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  animation: gradientShift 12s ease infinite alternate;
+  
+  /* 粉色气泡浮动背景 */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="3" fill="rgba(255,182,193,0.3)"/><circle cx="50" cy="40" r="4" fill="rgba(255,182,193,0.4)"/><circle cx="80" cy="20" r="2" fill="rgba(255,182,193,0.2)"/><circle cx="30" cy="70" r="3" fill="rgba(255,182,193,0.3)"/><circle cx="70" cy="60" r="5" fill="rgba(255,182,193,0.2)"/></svg>');
+    opacity: 0.6;
+    z-index: 0;
+    animation: bubbleMove 20s linear infinite;
+  }
+
+  .header {
+    position: relative;
+    z-index: 1;
+    padding: 30rpx 0;
+    text-align: center;
+    
+    text {
+      font-size: 42rpx;
+      font-weight: 600;
+      color: #4a6fa5;
+      text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+      background: linear-gradient(to right, #4a6fa5, #ff85a2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+  }
+
+  .actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin: 20rpx 0;
+    gap: 20rpx;
+    
+    button {
+      flex: 1;
+      max-width: 200rpx;
+      border-radius: 50rpx;
+      transition: all 0.3s ease;
+      
+      &[type="primary"] {
+        background: linear-gradient(45deg, #4a6fa5, #6a8fc7);
+        box-shadow: 0 4rpx 12rpx rgba(74, 111, 165, 0.3);
+      }
+      
+      &:not([type]) {
+        background: linear-gradient(45deg, #ff85a2, #ffb6c1);
+        box-shadow: 0 4rpx 12rpx rgba(255, 133, 162, 0.3);
+        color: white;
+      }
+      
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10rpx);
+    border-radius: 20rpx;
+    padding: 30rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.05);
+    border: 1rpx solid rgba(255, 182, 193, 0.3);
+    animation: cardFloat 6s ease-in-out infinite alternate;
+    
+    .english-card {
+      display: flex;
+      flex-direction: column;
+      gap: 30rpx;
+      
+      .english-text {
+        font-size: 36rpx;
+        color: #4a6fa5;
+        line-height: 1.6;
+        font-weight: 500;
+        text-align: center;
+      }
+      
+      .chinese-text {
+        font-size: 32rpx;
+        color: #ff85a2;
+        line-height: 1.6;
+        text-align: center;
+        font-style: italic;
+      }
+      
+      .english-image {
+        width: 100%;
+        border-radius: 16rpx;
+        margin-top: 20rpx;
+        box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+  }
+
+  .loading, .error {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 40rpx;
+    font-size: 28rpx;
+    color: #ff85a2;
+  }
+}
+
+/* 动画定义 */
+@keyframes statusBarShift {
+  0% {
+    background: linear-gradient(90deg, #e6f7ff 0%, #ffebf3 50%, #ffffff 100%);
+  }
+  33% {
+    background: linear-gradient(90deg, #ffebf3 0%, #ffffff 50%, #e6f7ff 100%);
+  }
+  66% {
+    background: linear-gradient(90deg, #ffffff 0%, #e6f7ff 50%, #ffebf3 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, #e6f7ff 0%, #ffebf3 50%, #ffffff 100%);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(135deg, #e6f7ff 0%, #ffebf3 50%, #ffffff 100%);
+  }
+  33% {
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffe6f0 50%, #fffafc 100%);
+  }
+  66% {
+    background: linear-gradient(135deg, #d4f1ff 0%, #ffd6e7 50%, #fff5f9 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #c2e4ff 0%, #ffc0cb 50%, #fff0f5 100%);
+  }
+}
+
+@keyframes bubbleMove {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20rpx) translateX(10rpx);
+  }
+  50% {
+    transform: translateY(10rpx) translateX(-15rpx);
+  }
+  75% {
+    transform: translateY(-15rpx) translateX(5rpx);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10rpx rgba(74, 111, 165, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20rpx rgba(255, 133, 162, 0.4);
+  }
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10rpx);
+  }
+}

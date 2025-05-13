@@ -47,10 +47,6 @@
         </view>
       </view>
     </view>
-
-
-
-
   </van-tab>
   <van-tab title="借用中">
     <!-- 全部  -->
@@ -100,9 +96,7 @@
         </view>
       </view>
     </view>
-
-
-
+    
   </van-tab>
   <van-tab title="已归还">
     <!-- 全部  -->

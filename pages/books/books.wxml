@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="header">
+    <text>每日英语</text>
+  </view>
+
+  <view class="actions">
+    <button type="primary" bindtap="getDailyEnglish" size="mini">获取每日英语</button>
+    <button bindtap="getRandomDailyEnglish" size="mini">随机获取</button>
+    <button bindtap="toggleLanguage" size="mini">
+      {{showChinese ? '隐藏中文' : '显示中文'}}
+    </button>
+  </view>
+
+  <view class="content" wx:if="{{dailyEnglish}}">
+    <view class="english-card">
+      <view class="english-text">{{dailyEnglish.en}}</view>
+      <view class="chinese-text" wx:if="{{showChinese}}">{{dailyEnglish.zh}}</view>
+      
+      <image 
+        wx:if="{{dailyEnglish.pic}}" 
+        src="{{dailyEnglish.pic}}" 
+        mode="aspectFit" 
+        bindtap="previewImage"
+        class="english-image"
+      />
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+  <view wx:if="{{errorMsg}}" class="error">{{errorMsg}}</view>
+</view>

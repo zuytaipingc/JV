@@ -10,6 +10,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "书摘",
+          "pathName": "pages/books/books",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "天气",
+          "pathName": "pages/weather/weather",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "设备借用2",
           "pathName": "pages/borrowForm/borrowForm",
           "query": "",

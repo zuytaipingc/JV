@@ -1,0 +1,25 @@
+<view class="container">
+    <view class="header">
+        <text class="title">{{city}} 天气</text>
+    </view>
+    <view class="content">
+        <view class="item">
+            <text>日期：{{date}} ({{week}})</text>
+        </view>
+        <view class="item">
+            <text>白天天气：{{weatherType}}</text>
+        </view>
+        <view class="item">
+            <text>夜间天气：{{nightWeatherType}}</text>
+        </view>
+        <view class="item">
+            <text>温度范围：{{lowTemp}} ~ {{highTemp}}</text>
+        </view>
+<view class="item">
+ <text>空气质量指数 (AQI)：{{aqi}}</text>
+ </view>
+ <view class="item">
+ <text>空气质量等级：{{aqiName}}</text>
+ </view>
+ </view>
+ </view>
