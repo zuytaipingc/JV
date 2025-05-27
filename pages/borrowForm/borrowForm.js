@@ -1,66 +1,91 @@
-// pages/borrowForm/borrowForm.js
+// pages/borrowForm/index.js
+// 导入封装好的接口
+const http = require('../../api/http');
+const request = require('../../request/index');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    borrowRemark: '',
+    returnTime: '',
+    show: false,
+    deviceId: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    // 获取设备id
+    const { deviceId } = options
+    if (!deviceId) {
+      wx.showToast({
+        title: '设备ID不存在',
+        icon: 'none',
+        duration: 1000
+      })
+      // 跳转到设备列表页
+      wx.navigateTo({
+        url: '/pages/equipList/index',
+      });
+      return;
+    } else {
+      this.setData({
+        deviceId
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onDisplay() {
+    this.setData({ show: true });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onClose() {
+    this.setData({ show: false });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  // 格式化日期
+  formatDate(returnTime) {
+    returnTime = new Date(returnTime);
+    const year = returnTime.getFullYear();
+    const month = String(returnTime.getMonth() + 1).padStart(2, '0');
+    const day = String(returnTime.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  onConfirm(event) {
+    console.log(this.formatDate(event.detail),'1111');
+    this.setData({
+      show: false,
+      returnTime: this.formatDate(event.detail),
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onSubmit() {
+    http.borrowEquip({
+      deviceId: this.data.deviceId,
+      borrowRemark: this.data.borrowRemark,
+      returnTime: this.data.returnTime,
+    }).then(res => {
+      console.log(res);
+      if (res.code === 200) {
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 1000
+        })
+        // 返回到上一个页面
+        wx.navigateBack({
+          delta: 1
+        });
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          duration: 1000
+        })
+        // 返回到上一个页面
+        wx.navigateBack({
+          delta: 1
+        });
+      }
+    })
   }
 })

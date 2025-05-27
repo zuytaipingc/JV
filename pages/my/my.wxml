@@ -1,64 +1,40 @@
-<!-- <view class="container"> -->
-<!-- top -->
-<!-- <view class="top">
-        <image src="/images/xr.png" mode="widthFix" />
-        <text class="title1">
-            注册 / 登录
-        </text>
-        <text class="title2">
-            注册成功后，使用更多功能
-        </text>
-    </view>
-</navigator>
-</view>
-<view class="gongnneg">
-        <view class="optins">
-            <navigator url="/pages/borrow-record/borrow-record">
-            <text class="title1">我的借用记录</text>
-    </navigator>
+<view class="main">
 
-    <navigator url="/pages/borrow-record/borrow-record">
-            <text class="title2">关于</text>
-        </navigator>
-        </view>
-   
-</view> -->
 
-<!-- user -->
-
-<view class="container">
-  <view class="top">
-    <view class="inner">
-      <!-- 头像 -->
-      <image src="/images/xr.png" mode="" />
-      <!-- 登录注册 -->
-      <view class="right">
-        <text>注册/登录</text>
-        <text>注册成功后，使用更多功能</text>
+<view class="top">
+  <view class="info" bindtap="goLogin">
+    <image src="/images/xr.png" class="loading" />
+    <view class="right">
+      <view class="line1">
+        <view class="name">{{user&&user.userName?user.userName:'注册 / 登录'}}</view>
+        <view wx:if="{{user&&user.status==-1}}" class="type">登录失败</view>
+        <view wx:elif="{{user&&user.status==0}}" class="type">已登录</view>
+        <view wx:elif="{{user&&user.status==1}}" class="type">已注册，待审核</view>
+        <view wx:elif="{{user&&user.status==3}}" class="type">已禁用</view>
       </view>
+      <view class="line2">{{user&&user.userName?'欢迎回来~~~':'注册成功后，使用更多功能'}}</view>
     </view>
   </view>
 </view>
-
 <!-- 列表 -->
- <view class="list">
-    <view bind:tap="myOrderList">
-        <view class="list_left">
-            <text class="iconfont icon-gwb"></text>
-            <text>我的借用记录</text>
-        </view>
-        <view class="list_right">
-            <text class="iconfont icon-yjt"></text>
-        </view>
+<view class="list">
+  <view>
+    <view class="list_l" bindtap="myBorrowingList">
+      <text class="iconfont icon-gwb"></text>
+      <text>我的借用记录</text>
     </view>
-
-    <view bind:tap="about">
-        <view class="list_left">
-            <text class="iconfont icon-kefu"></text>
-            <text>关于</text>
-        </view>
-        <view class="list_right">
-            <text class="iconfont icon-yjt"></text>
-        </view>
+    <text class="iconfont icon-yjt"></text>
+  </view>
+  <view>
+    <view class="list_l" bindtap="goAbout">
+      <text class="iconfont icon-gy"></text>
+      <text>关于</text>
     </view>
- </view>
+    <text class="iconfont icon-yjt"></text>
+  </view>
+</view>
+<!-- 退出登录 -->
+<view class="exit-box">
+  <view class="exit-btn" bindtap="exit">退出登录</view>
+</view>
+</view>

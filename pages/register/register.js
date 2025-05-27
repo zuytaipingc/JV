@@ -1,3 +1,5 @@
+//导入接口
+const http = require('../../api/http');
 Page({
   //初始化数据
   data: {
@@ -23,7 +25,6 @@ Page({
       regName: this.data.regName.replace(/\s+/g, ""),
       regMobile: this.data.regMobile.replace(/\s+/g, ""),
       regPassword: this.data.regPassword.replace(/\s+/g, ""),
-
 
     }
     //非空校验
@@ -61,5 +62,28 @@ Page({
       return
     }
     //请求参数
+    http.registerAccount(data).then(res => {
+      console.log(res, 9999);
+      if (res.code == 200) {
+        wx.showToast({
+          title: '注册成功',
+          icon: 'success'
+        })
+          //跳转到登录页面
+        this.registerSuccess()
+      }else{
+        wx.showToast({
+          title: '注册失败',
+          icon:'none'
+        })
+        return false
+      }
+    })
+  },
+  //跳转到登录页面
+  registerSuccess() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
   }
 })

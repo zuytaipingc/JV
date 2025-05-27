@@ -1,14 +1,12 @@
-<view class="borrowFrom-box">
-  <van-cell-group>
-    <van-field value="{{ value }}" placeholder="请输入借用说明" border="{{ true }}" required label="借用说明" maxlength="20"
-    show-word-limit custom-class="custom-field"
-    />
-    <van-field value="{{ value }}" border="{{ true }}" label="归还时间"
-    />
-  
-  </van-cell-group>
-    <!-- 按钮 -->
-    <view class="btn">
-    <van-button block color="#0156c0" round bind:tap="login">提交</van-button>
-  </view>
+<!--pages/borrowForm/index.wxml-->
+<view class="borrowForm-box">
+    <van-cell-group>
+        <van-field title-width="4em" maxlength='20' label="借用说明" model:value="{{ borrowRemark }}" required center clearable placeholder="请输入借用说明" show-word-limit custom-class="custom-field" input-class="pwd" border="{{ true }}" />
+        <van-cell title="归还时间" value="{{ returnTime }}" bind:click="onDisplay" />
+    </van-cell-group>
+    
+    <van-calendar show="{{ show }}" show-confirm="{{ false }}" bind:close="onClose" bind:confirm="onConfirm" />
+    <view class="subButton">
+        <van-button type="primary" color="#0055be" bind:click="onSubmit">提交</van-button>
+    </view>
 </view>

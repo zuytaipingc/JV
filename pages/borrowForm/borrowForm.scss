@@ -1,21 +1,42 @@
-.borrowFrom-box{
-  background-color: #fff;
-  height: 100vh;
-  margin: 20rpx;
-  padding: 20rpx;
-  van-cell-group{
-    .custom-field {
-      margin: 30rpx 0;
-      //解决字数统计错位
-      .van-cell__value {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      //解决清除控件位置
-      .van-field__body{
-        width: 100%;
-      }
-    }
-  }
+/* pages/borrowForm/index.wxss */
+page{
+    background-color: #f5f5f5;
+}
+.borrowForm-box {
+    background-color: #ffffff;
+    padding: 20rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    height: 300rpx;
+}
+.custom-field {
+/* 设置圆角 */
+/* border-radius: 20rpx; */
+    display: flex;
+    justify-content: space-between;
+}
+/* 输入框内容垂直居中 */
+.custom-field .van-cell__value {
+    display: flex;
+    align-items: center;
+}
+/* 输入字符统计位置 */
+.custom-field .van-field__word-limit {
+    position: absolute;
+    right: 20rpx;
+}
+
+/* 按钮 */
+.subButton {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    color: #fff;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pwd{
+    width: 440rpx !important;
+    /* background-color: blue !important; */
 }

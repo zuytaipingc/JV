@@ -1,17 +1,66 @@
+// 导入接口
+const http = require('../../api/http');
+const request = require('../../request/index')
 Page({
-  data: {
-    //列表
-    equipList: [
-      {
-        deviceId:0,
-        deviceImg:'https://picb7.photophoto.cn/11/537/11537487_1.jpg',
-        deviceName: '联想扬天台式机',
-        deviceStatus: 1,
-        updateTime: '2025-03-31',
-        typeName:'台式机',
-        deviceContent:'联想扬天产品主要面向100人以上的中型企业用户，定位明确为满足企业办公需求。通过深度定制，整合电脑管理、应用办公、企业管理等多层次服务，扬天系列提供了全面的企业级解决方案。其稳定性和高性价比使其在企业级市场中具备高端商务办公解决方案的特质‌。‌'
-      }
-      
-    ]
+   // 初始化数据
+   data: {
+    equipDetail:{},
+    // 获取url地址
+    url: request.base_url
   },
+  // 图片预览
+  previewImage(event) {
+    console.log(event, 123);
+    // 解构出pic
+    const { pic } = event.currentTarget.dataset
+    wx.previewImage({
+      urls: [pic]
+    })
+  },
+  // 页面加载
+  onLoad(options){
+    console.log(options,66666);
+    // 解构id
+    const {deviceId} = options
+    if(!deviceId){
+      wx.showToast({
+        title: '设备ID不存在',
+        icon:'none'
+      })
+      wx.navigateTo({
+        url: '/pages/equipList/equipList',
+      })
+      return
+    }else{
+      this.getDeviceDetail(deviceId);
+    }
+  },
+  // 获取设备详情
+  getDeviceDetail(deviceId){
+    http.equipDetail({deviceId}).then(res =>{
+      console.log(res,999);
+      // 解构出data
+      const {data} = res
+      //  把data赋值给equipDetail
+      this.setData({
+        equipDetail:data
+      })
+    })
+  },
+  borrowEquip(event){    
+    // 如果设备状态为1，表示设备已经借出 提示不可借用
+    console.log(event,"event");
+    if(event.currentTarget.dataset.devicestatus === 1){
+      wx.showToast({
+        title: '设备已借出',
+        icon: 'none',
+        duration: 1000
+      })
+      return;
+    }
+    //跳转到借用表单页
+    wx.navigateTo({
+      url: '/pages/borrowForm/borrowForm?deviceId='+this.data.equipDetail.deviceId,
+    })
+  }
 })

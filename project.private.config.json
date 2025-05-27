@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "设备借用",
+          "pathName": "pages/equipList/equipList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "书摘",
           "pathName": "pages/books/books",
           "query": "",
@@ -75,13 +82,6 @@
         {
           "name": "设备归还",
           "pathName": "pages/myOrderList/myOrderList",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "设备借用",
-          "pathName": "pages/equipList/equipList",
           "query": "",
           "launchMode": "default",
           "scene": null
