@@ -19,7 +19,7 @@
     <view>
       密码
     </view>
-    <van-field model:value="{{ password }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" passWord clearable focus="{{focusOnUserPassword}}"/>
+    <van-field model:value="{{ password }}" placeholder="请输入密码" border="{{ true }}" required maxlength="8" show-word-limit custom-class="custom-field" password clearable focus="{{focusOnUserPassword}}"/>
   </van-cell-group>
   <!-- 去注册 -->
   <view class="register-box">

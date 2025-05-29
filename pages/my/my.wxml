@@ -1,40 +1,38 @@
 <view class="main">
-
-
-<view class="top">
-  <view class="info" bindtap="goLogin">
-    <image src="/images/xr.png" class="loading" />
-    <view class="right">
-      <view class="line1">
-        <view class="name">{{user&&user.userName?user.userName:'注册 / 登录'}}</view>
-        <view wx:if="{{user&&user.status==-1}}" class="type">登录失败</view>
-        <view wx:elif="{{user&&user.status==0}}" class="type">已登录</view>
-        <view wx:elif="{{user&&user.status==1}}" class="type">已注册，待审核</view>
-        <view wx:elif="{{user&&user.status==3}}" class="type">已禁用</view>
+  <view class="top">
+    <view class="info" bindtap="goLogin">
+      <image src="/images/xr.png" class="loading" />
+      <view class="right">
+        <view class="line1">
+          <view class="name">{{user&&user.regName?user.regName:'注册 / 登录'}}</view>
+          <view wx:if="{{user&&user.regStatus==1}}" class="type">已登录</view>
+        </view>
       </view>
-      <view class="line2">{{user&&user.userName?'欢迎回来~~~':'注册成功后，使用更多功能'}}</view>
     </view>
   </view>
-</view>
-<!-- 列表 -->
-<view class="list">
-  <view>
-    <view class="list_l" bindtap="myBorrowingList">
-      <text class="iconfont icon-gwb"></text>
-      <text>我的借用记录</text>
+  <!-- 列表 -->
+  <view class="list">
+    <view>
+      <view class="list_l" bindtap="myBorrowingList">
+        <text class="iconfont icon-gwb"></text>
+        <text>我的借用记录</text>
+      </view>
+      <text class="iconfont icon-yjt"></text>
     </view>
-    <text class="iconfont icon-yjt"></text>
-  </view>
-  <view>
-    <view class="list_l" bindtap="goAbout">
-      <text class="iconfont icon-gy"></text>
-      <text>关于</text>
+    <view>
+      <view class="list_l" bindtap="goAbout">
+        <text class="iconfont icon-kefu"></text>
+        <text>关于</text>
+      </view>
+      <text class="iconfont icon-yjt"></text>
     </view>
-    <text class="iconfont icon-yjt"></text>
+  </view>
+  <!-- 退出登录 -->
+  <view class="exit-box">
+    <view class="exit-btn" bindtap="exit">退出登录</view>
   </view>
 </view>
-<!-- 退出登录 -->
-<view class="exit-box">
-  <view class="exit-btn" bindtap="exit">退出登录</view>
-</view>
-</view>
+
+
+
+

@@ -59,8 +59,11 @@ Page({
     });
   },
   onSubmit() {
+    // 获取id
+    let userId = wx.getStorageSync('userInfo').regId
     http.borrowEquip({
       deviceId: this.data.deviceId,
+      userId:userId,
       borrowRemark: this.data.borrowRemark,
       returnTime: this.data.returnTime,
     }).then(res => {

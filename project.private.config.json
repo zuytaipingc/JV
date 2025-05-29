@@ -10,6 +10,41 @@
     "miniprogram": {
       "list": [
         {
+          "name": "关于",
+          "pathName": "pages/about/about",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
+          "query": "deviceId=16",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "设备借用2",
+          "pathName": "pages/borrowForm/borrowForm",
+          "query": "deviceId=16",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "设备归还",
+          "pathName": "pages/myOrderList/myOrderList",
+          "query": "deviceId=16",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "设备详情",
+          "pathName": "pages/equipDetail/equipDetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "设备借用",
           "pathName": "pages/equipList/equipList",
           "query": "",
@@ -31,27 +66,6 @@
           "scene": null
         },
         {
-          "name": "设备借用2",
-          "pathName": "pages/borrowForm/borrowForm",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "关于",
-          "pathName": "pages/about/about",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "设备归还",
-          "pathName": "pages/myOrderList/myOrderList",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
           "name": "注册",
           "pathName": "pages/register/register",
           "query": "",
@@ -66,13 +80,6 @@
           "scene": null
         },
         {
-          "name": "设备详情",
-          "pathName": "pages/equipDetail/equipDetail",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
           "name": "网络请求",
           "pathName": "pages/demo/demo",
           "query": "",
@@ -82,13 +89,6 @@
         {
           "name": "设备归还",
           "pathName": "pages/myOrderList/myOrderList",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "我的",
-          "pathName": "pages/my/my",
           "query": "",
           "launchMode": "default",
           "scene": null

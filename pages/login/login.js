@@ -44,7 +44,7 @@ Page({
       wx.showToast({
         title: '请输入密码',
         icon: 'none'
-      })
+      })  
       //获取焦点
       this.setData({
         focusOnUserPassword: true
@@ -66,7 +66,7 @@ Page({
     //发送请求
     http.login(data).then(res => {
       if (res.code == 200 && res.data) {
-        wx.setStorageSync('userInfo', data)
+        wx.setStorageSync('userInfo', res.data)
         wx.showToast({
           title: '登录成功',
           icon: 'success'
